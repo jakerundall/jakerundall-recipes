@@ -1,1 +1,48 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads Garmin Express disk image and imports into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.autopkg.munki.firefox-rc-en_US</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/GarminExpress</string>
+        <key>NAME</key>
+        <string>GarminExpress</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>Garmin Express is software that helps you manage your Garmin devices.</string>
+            <key>display_name</key>
+            <string>Garmin Express</string>
+            <key>name</key>
+            <string>%NAME%</string>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.2</string>
+    <key>ParentRecipe</key>
+    <string>com.github.jakerundall.download.GarminExpress</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>

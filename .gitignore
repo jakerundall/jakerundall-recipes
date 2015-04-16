@@ -1,0 +1,5 @@
+# Exclude .DS_Store Files
+.DS_Store
+
+# Exclude emacs backup files
+*~
